@@ -1,0 +1,8 @@
+name: TestCustomPlugin
+main: Main
+version: "1.0.0"
+api: [ "1.0.14" ]
+load: POSTWORLD
+author: CoolLoong
+description: Example plugin showing the CustomItem and CustomBlock and CustomEntity API!
+prefix: "TestCustomPlugin"

@@ -1,0 +1,176 @@
+{
+  "format_version": "1.16.100",
+  "minecraft:block": {
+    "description": {
+      "identifier": "blocklynukkit:blue_mahoe_slab",
+      "properties": {
+        "bridge:top_slot_bit": [
+          false,
+          true
+        ],
+        "bridge:is_full_bit": [
+          false,
+          true
+        ]
+      }
+    },
+    "components": {
+      "tag:wood": {},
+      "minecraft:block_light_absorption": 1,
+      "minecraft:breathability": "air",
+      "minecraft:creative_category": {
+        "category": "construction",
+        "group": "itemGroup.name.slab"
+      },
+      "minecraft:destroy_time": 1,
+      "minecraft:explosion_resistance": 3,
+      "minecraft:flammable": {
+        "burn_odds": 1,
+        "flame_odds": 5
+      },
+      "minecraft:material_instances": {
+        "*": {
+          "texture": "blue_mahoe_planks",
+          "render_method": "opaque"
+        },
+        "down": {
+          "texture": "blue_mahoe_planks",
+          "render_method": "opaque"
+        },
+        "up": {
+          "texture": "blue_mahoe_planks",
+          "render_method": "opaque"
+        }
+      },
+      "minecraft:part_visibility": {
+        "rules": {
+          "lower": "!query.block_property('bridge:top_slot_bit') || query.block_property('bridge:is_full_bit')",
+          "upper": "query.block_property('bridge:top_slot_bit') || query.block_property('bridge:is_full_bit')"
+        }
+      },
+      "minecraft:geometry": "geometry.custom_slab",
+      "minecraft:on_player_placing": {
+        "event": "radio:up",
+        "condition": "query.target_x_rotation<=0"
+      }
+    },
+    "events": {
+      "bridge:on_combine_slabs": {
+        "decrement_stack": {},
+        "run_command": {
+          "command": [
+            "playsound dig.wood @a"
+          ],
+          "target": "self"
+        },
+        "set_block_property": {
+          "bridge:is_full_bit": true
+        }
+      },
+      "radio:up": {
+        "set_block_property": {
+          "bridge:top_slot_bit": true
+        }
+      }
+    },
+    "permutations": [
+      {
+        "condition": "query.block_property('bridge:top_slot_bit') == false && query.block_property('bridge:is_full_bit') == false",
+        "components": {
+          "minecraft:entity_collision": {
+            "origin": [
+              -8,
+              0,
+              -8
+            ],
+            "size": [
+              16,
+              8,
+              16
+            ]
+          },
+          "minecraft:pick_collision": {
+            "origin": [
+              -8,
+              0,
+              -8
+            ],
+            "size": [
+              16,
+              8,
+              16
+            ]
+          },
+          "minecraft:on_interact": {
+            "condition": "query.block_face==1&&query.is_item_name_any('slot.weapon.mainhand',0,'blocklynukkit:blue_mahoe_slab')",
+            "event": "bridge:on_combine_slabs"
+          }
+        }
+      },
+      {
+        "condition": "query.block_property('bridge:top_slot_bit') == true && query.block_property('bridge:is_full_bit') == false",
+        "components": {
+          "minecraft:entity_collision": {
+            "origin": [
+              -8,
+              8,
+              -8
+            ],
+            "size": [
+              16,
+              8,
+              16
+            ]
+          },
+          "minecraft:pick_collision": {
+            "origin": [
+              -8,
+              8,
+              -8
+            ],
+            "size": [
+              16,
+              8,
+              16
+            ]
+          },
+          "minecraft:on_interact": {
+            "condition": "query.block_face==0&&query.is_item_name_any('slot.weapon.mainhand',0,'blocklynukkit:blue_mahoe_slab')",
+            "event": "bridge:on_combine_slabs"
+          }
+        }
+      },
+      {
+        "condition": "query.block_property('bridge:is_full_bit') == true ",
+        "components": {
+          "minecraft:entity_collision": {
+            "origin": [
+              -8,
+              0,
+              -8
+            ],
+            "size": [
+              16,
+              16,
+              16
+            ]
+          },
+          "minecraft:pick_collision": {
+            "origin": [
+              -8,
+              0,
+              -8
+            ],
+            "size": [
+              16,
+              16,
+              16
+            ]
+          },
+          "minecraft:loot": "loot_tables/blocks/double_blue_mahoe_slab.json",
+          "tag:fence-connectable": {}
+        }
+      }
+    ]
+  }
+}
