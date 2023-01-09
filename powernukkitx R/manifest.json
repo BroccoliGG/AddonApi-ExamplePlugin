@@ -1,30 +1,28 @@
 {
   "format_version": 2,
   "header": {
-    "description": "PowerNukkitX Test Addon.",
-    "name": "PowerNukkitX",
-    "uuid": "b9fe7ab8-215f-4e7d-97c2-ea6dda9303f2",
-    "version": [
-      0,
-      0,
-      1
-    ],
-    "min_engine_version": [
-      1,
-      18,
-      30
-    ]
+    "name": "TCMB",
+    "description": "Train Controller for Minecraft BE",
+    "version": [1, 0, 0],
+    "uuid": "4bc491c8-d249-4cb9-9432-3bf4da163da3",
+    "min_engine_version": [1, 19, 50]
   },
   "modules": [
     {
-      "description": "PowerNukkitX Test Addon.",
       "type": "resources",
-      "uuid": "8643a63d-65e5-4bcc-8c78-44003ddf5a29",
-      "version": [
-        1,
-        0,
-        0
-      ]
+      "description": "TCMB Module",
+      "version": [1, 0, 0],
+      "uuid": "5a394d3d-9063-4df3-99b0-45b0754ccd7f"
     }
-  ]
+  ],
+  "dependencies": [
+    {
+    "uuid": "cfbba0b1-51fe-4f44-bd2b-d07a106617e7",
+    "version": [1, 0, 0]
+    }
+  ],
+  "metadata": {
+    "url": "https://github.com/TCMB-Project/",
+    "license": "TSL v1.0"
+  }
 }

@@ -1,0 +1,42 @@
+{
+    "format_version":"1.18.0",
+    "minecraft:entity":{
+        "description":{
+            "identifier": "tcmb:ride_2",
+            "is_spawnable": true,
+            "is_summonable": true,
+            "is_experimental": false,
+            "animations":{
+                "ride_2_controller": "controller.animation.ride_2"
+            },
+            "scripts":{
+                "animate":[
+                    "ride_2_controller"
+                ]
+            }
+        },
+        "component_groups": {
+            "delete_self": {
+                "minecraft:instant_despawn": {}
+            }
+        },
+        "components":{
+            "minecraft:type_family": {
+                "family": [
+                    "tcmb",
+                    "tcmb_item"
+                ]
+            },
+            "minecraft:physics": {}
+        },
+        "events": {
+            "delete": {
+                "add": {
+                    "component_groups": [
+                        "delete_self"
+                    ]
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,42 @@
+{
+    "format_version":"1.18.0",
+    "minecraft:entity":{
+        "description":{
+            "identifier": "tcmb:oneman_open_left",
+            "is_spawnable": true,
+            "is_summonable": true,
+            "is_experimental": false,
+            "animations":{
+                "oneman_open_left_controller": "controller.animation.oneman_open_left"
+            },
+            "scripts":{
+                "animate":[
+                    "oneman_open_left_controller"
+                ]
+            }
+        },
+        "component_groups": {
+            "delete_self": {
+                "minecraft:instant_despawn": {}
+            }
+        },
+        "components":{
+            "minecraft:type_family": {
+                "family": [
+                    "tcmb",
+                    "tcmb_item"
+                ]
+            },
+            "minecraft:physics": {}
+        },
+        "events": {
+            "delete": {
+                "add": {
+                    "component_groups": [
+                        "delete_self"
+                    ]
+                }
+            }
+        }
+    }
+}
