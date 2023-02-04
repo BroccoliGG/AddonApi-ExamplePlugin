@@ -1,5 +1,5 @@
 name: TestCustomPlugin
-main: Main
+main: pnx.MainPlugin
 version: "1.0.0"
 api: [ "1.0.14" ]
 load: POSTWORLD
