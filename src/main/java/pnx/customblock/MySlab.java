@@ -70,8 +70,8 @@ public class MySlab extends BlockTransparentMeta implements CustomBlock {
     }
 
     @Override
-    public double calculateBreakTime(@NotNull Item item, @Nullable Player player) {
-        return 3;
+    public double getHardness() {
+        return 5;
     }
 
     @Override

@@ -1,14 +1,12 @@
 package pnx.customblock;
 
-import cn.nukkit.Player;
 import cn.nukkit.block.Block;
 import cn.nukkit.block.customblock.CustomBlock;
 import cn.nukkit.block.customblock.CustomBlockDefinition;
-import cn.nukkit.item.Item;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
 public class MyBlock extends Block implements CustomBlock {
+    @NotNull
     @Override
     public String getNamespaceId() {
         return "powernukkitx:redstoneluckyblock";
@@ -18,6 +16,7 @@ public class MyBlock extends Block implements CustomBlock {
     public CustomBlockDefinition getDefinition() {
         return CustomBlockDefinition
                 .builder(this, "redstoneluckyblock")
+                .breakTime(10)
                 .build();
     }
 
@@ -29,11 +28,6 @@ public class MyBlock extends Block implements CustomBlock {
     @Override
     public int getId() {
         return CustomBlock.super.getId();
-    }
-
-    @Override
-    public double calculateBreakTime(@NotNull Item item, @Nullable Player player) {
-        return 3;
     }
 
     @Override

@@ -6,7 +6,7 @@ import cn.nukkit.entity.provider.CustomClassEntityProvider;
 import cn.nukkit.event.EventHandler;
 import cn.nukkit.event.EventPriority;
 import cn.nukkit.event.Listener;
-import cn.nukkit.event.player.PlayerJumpEvent;
+import cn.nukkit.event.player.PlayerChatEvent;
 import cn.nukkit.item.Item;
 import cn.nukkit.item.enchantment.Enchantment;
 import cn.nukkit.plugin.PluginBase;
@@ -49,9 +49,11 @@ public class MainPlugin extends PluginBase implements Listener {
     }
 
     @EventHandler(priority = EventPriority.NORMAL)
-    public void onJump(PlayerJumpEvent event) {
-        System.out.println("生成自定义实体");
-        new MyPig(event.getPlayer().getChunk(), Entity.getDefaultNBT(event.getPlayer())).spawnToAll();
-        new MyHuman(event.getPlayer().getChunk(), Entity.getDefaultNBT(event.getPlayer())).spawnToAll();
+    public void onChat(PlayerChatEvent event) {
+        if (event.getMessage().contains("test")) {
+            System.out.println("生成自定义实体");
+            new MyPig(event.getPlayer().getChunk(), Entity.getDefaultNBT(event.getPlayer())).spawnToAll();
+            new MyHuman(event.getPlayer().getChunk(), Entity.getDefaultNBT(event.getPlayer())).spawnToAll();
+        }
     }
 }
