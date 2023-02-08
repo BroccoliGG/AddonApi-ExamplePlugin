@@ -8,4 +8,9 @@ public class MyEnchantment2 extends Enchantment {
     public MyEnchantment2() {
         super(new Identifier("pnx:test2"), "Test2", Rarity.COMMON, EnchantmentType.ALL);
     }
+
+    @Override
+    public int getMaxLevel() {
+        return 3;
+    }
 }

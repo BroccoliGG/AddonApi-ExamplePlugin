@@ -22,9 +22,9 @@
 
     <dependencies>
         <dependency>
-            <groupId>com.github.PowerNukkitX</groupId>
-            <artifactId>PowerNukkitX</artifactId>
-            <version>490277ede0</version>
+            <groupId>cn.powernukkitx</groupId>
+            <artifactId>powernukkitx</artifactId>
+            <version>1.19.60-r1</version>
         </dependency>
     </dependencies>
 </project>

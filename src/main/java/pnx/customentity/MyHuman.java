@@ -14,6 +14,7 @@ import cn.nukkit.entity.ai.memory.CoreMemoryTypes;
 import cn.nukkit.entity.ai.route.finder.impl.SimpleFlatAStarRouteFinder;
 import cn.nukkit.entity.ai.route.posevaluator.WalkingPosEvaluator;
 import cn.nukkit.entity.ai.sensor.NearestPlayerSensor;
+import cn.nukkit.entity.custom.CustomEntity;
 import cn.nukkit.entity.custom.CustomEntityDefinition;
 import cn.nukkit.entity.data.Skin;
 import cn.nukkit.item.Item;
@@ -24,7 +25,7 @@ import cn.nukkit.nbt.tag.CompoundTag;
 import java.util.Base64;
 import java.util.Set;
 
-public class MyHuman extends EntityIntelligentHuman {
+public class MyHuman extends EntityIntelligentHuman implements CustomEntity {
     public final static CustomEntityDefinition def = CustomEntityDefinition.builder().identifier("powernukkitx:human")
             .summonable(false)
             .spawnEgg(false)
@@ -67,4 +68,8 @@ public class MyHuman extends EntityIntelligentHuman {
         );
     }
 
+    @Override
+    public CustomEntityDefinition getDefinition() {
+        return def;
+    }
 }
