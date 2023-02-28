@@ -16,7 +16,7 @@ public class MyBlock extends Block implements CustomBlock {
     public CustomBlockDefinition getDefinition() {
         return CustomBlockDefinition
                 .builder(this, "redstoneluckyblock")
-                .breakTime(10)
+                .breakTime(3)
                 .build();
     }
 
@@ -33,6 +33,11 @@ public class MyBlock extends Block implements CustomBlock {
     @Override
     public double getFrictionFactor() {
         return 0.1;
+    }
+
+    @Override
+    public double getHardness() {
+        return 99999;
     }
 
     @Override
