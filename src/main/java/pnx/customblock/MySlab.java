@@ -17,6 +17,7 @@ public class MySlab extends BlockTransparentMeta implements CustomBlock {
     public final BooleanBlockProperty BRIDGE_TOP_SLOT_BIT = new BooleanBlockProperty("bridge:top_slot_bit", false);
     public final BooleanBlockProperty BRIDGE_IS_FULL_BIT = new BooleanBlockProperty("bridge:is_full_bit", false);
 
+    @NotNull
     @Override
     public String getNamespaceId() {
         return "powernukkitx:blue_mahoe_slab";
@@ -44,27 +45,34 @@ public class MySlab extends BlockTransparentMeta implements CustomBlock {
     public CustomBlockDefinition getDefinition() {
         return CustomBlockDefinition
                 .builder(this, "blue_mahoe_planks")
-                .geometry("geometry.custom_slab")
+                .geometry(new Geometry("geometry.custom_slab")
+                        .boneVisibility("lower", true)
+                        .boneVisibility("upper", false))
                 .permutations(
                         new Permutation(Component.builder()
                                 .collisionBox(new CollisionBox(-8, 0, -8, 16, 8, 16))
                                 .selectionBox(new SelectionBox(-8, 0, -8, 16, 8, 16))
+                                .geometry(new Geometry("geometry.custom_slab")
+                                        .boneVisibility("lower", true)
+                                        .boneVisibility("upper", false))
                                 .build(),
                                 "query.block_property('bridge:top_slot_bit') == false && query.block_property('bridge:is_full_bit') == false"),
                         new Permutation(Component.builder()
                                 .collisionBox(new CollisionBox(-8, 8, -8, 16, 16, 16))
                                 .selectionBox(new SelectionBox(-8, 8, -8, 16, 16, 16))
+                                .geometry(new Geometry("geometry.custom_slab")
+                                        .boneVisibility("lower", false)
+                                        .boneVisibility("upper", true))
                                 .build(),
                                 "query.block_property('bridge:top_slot_bit') == true && query.block_property('bridge:is_full_bit') == false"),
                         new Permutation(Component.builder()
                                 .collisionBox(new CollisionBox(-8, 0, -8, 16, 16, 16))
                                 .selectionBox(new SelectionBox(-8, 0, -8, 16, 16, 16))
+                                .geometry(new Geometry("geometry.custom_slab")
+                                        .boneVisibility("lower", true)
+                                        .boneVisibility("upper", true))
                                 .build(),
                                 "query.block_property('bridge:is_full_bit') == true")
-                )
-                .partVisibility(
-                        new BoneCondition("lower", "lower", "!query.block_property('bridge:top_slot_bit') || query.block_property('bridge:is_full_bit')"),
-                        new BoneCondition("upper", "upper", "query.block_property('bridge:top_slot_bit') || query.block_property('bridge:is_full_bit')")
                 )
                 .build();
     }
