@@ -3,6 +3,8 @@ package pnx.customblock;
 import cn.nukkit.block.Block;
 import cn.nukkit.block.customblock.CustomBlock;
 import cn.nukkit.block.customblock.CustomBlockDefinition;
+import cn.nukkit.block.customblock.data.Transformation;
+import cn.nukkit.math.Vector3;
 import org.jetbrains.annotations.NotNull;
 
 public class MyBlock extends Block implements CustomBlock {
@@ -16,6 +18,7 @@ public class MyBlock extends Block implements CustomBlock {
     public CustomBlockDefinition getDefinition() {
         return CustomBlockDefinition
                 .builder(this, "redstoneluckyblock")
+                .transformation(new Transformation(new Vector3(0, 0, 0), new Vector3(1, 1, 1), new Vector3(90, 180, 90)))
                 .breakTime(3)
                 .build();
     }
@@ -32,7 +35,7 @@ public class MyBlock extends Block implements CustomBlock {
 
     @Override
     public double getFrictionFactor() {
-        return 0.1;
+        return 0.8;
     }
 
     @Override
