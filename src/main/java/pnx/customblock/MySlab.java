@@ -45,6 +45,7 @@ public class MySlab extends BlockTransparentMeta implements CustomBlock {
     public CustomBlockDefinition getDefinition() {
         return CustomBlockDefinition
                 .builder(this, "blue_mahoe_planks")
+                .clientFriction(0.1f)
                 .geometry(new Geometry("geometry.custom_slab")
                         .boneVisibility("lower", true)
                         .boneVisibility("upper", false))
@@ -84,7 +85,7 @@ public class MySlab extends BlockTransparentMeta implements CustomBlock {
 
     @Override
     public double getFrictionFactor() {
-        return 0.1;
+        return 0.9;
     }
 
     @Override

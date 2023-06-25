@@ -18,6 +18,7 @@ public class MyBlock extends Block implements CustomBlock {
     public CustomBlockDefinition getDefinition() {
         return CustomBlockDefinition
                 .builder(this, "redstoneluckyblock")
+                .clientFriction(0.4f)
                 .transformation(new Transformation(new Vector3(0, 0, 0), new Vector3(1, 1, 1), new Vector3(90, 180, 90)))
                 .breakTime(3)
                 .build();
@@ -35,7 +36,7 @@ public class MyBlock extends Block implements CustomBlock {
 
     @Override
     public double getFrictionFactor() {
-        return 0.8;
+        return 0.6;
     }
 
     @Override
