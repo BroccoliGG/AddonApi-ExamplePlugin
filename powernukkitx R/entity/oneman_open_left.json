@@ -1,0 +1,24 @@
+{
+    "format_version": "1.18.0",
+    "minecraft:client_entity": {
+        "description": {
+            "identifier": "tcmb:oneman_open_left",
+            "materials": {
+                "default": "skeleton"
+            },
+            "textures": {
+                "default":"textures/entity/null"
+            },
+            "geometry": {
+                "default": "geometry.null"
+            },
+            "render_controllers": [ 
+                "controller.render.default" 
+            ],
+            "spawn_egg": {
+                "texture": "tcmb",
+                "texture_index": 10
+            }
+        }
+    }
+}

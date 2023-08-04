@@ -1,0 +1,407 @@
+{
+    "format_version": "1.18.0",
+    "animation_controllers":{
+        "controller.animation.load":{
+            "states":{
+                "default":{
+                    "transitions":[
+                        {"run": "(1.0)"}
+                    ]
+                },
+                "run":{
+                    "on_entry":[
+                        "/tp @s 14106 2 14106",
+                        "/structure load tcmb_admin 14096 0 14096",
+                        "/gamerule commandblockoutput false",
+                        "/scoreboard objectives add speed dummy speed",
+                        "/title @a title Welcome to §3TCMB§f!!!",
+                        "/title @a subtitle §3Train Controller for Minecraft BE",
+                        "/title @a actionbar 初期設定を完了しました。",
+                        "@s delete"
+                    ]
+                }
+            }
+        },
+        "controller.animation.notch_power":{
+            "states":{
+                "default":{
+                    "transitions":[
+                        {"run": "(1.0)"}
+                    ]
+                },
+                "run":{
+                    "on_entry":[
+                        "/execute as @e[type=tcmb:tcmb_car,c=1] at @s run execute as @s[tag=!voltage_0] at @s run playsound notch @a[r=25]",
+                        "/execute as @e[type=tcmb:tcmb_car,c=1] at @s run execute as @s[tag=!voltage_0] at @s run function notch_power",
+                        "@s delete"
+                    ]
+                }
+            }
+        },
+        "controller.animation.notch_neutral":{
+            "states":{
+                "default":{
+                    "transitions":[
+                        {"run": "(1.0)"}
+                    ]
+                },
+                "run":{
+                    "on_entry":[
+                        "/execute as @e[type=tcmb:tcmb_car,c=1] at @s run execute as @s[tag=!voltage_0] at @s run playsound notch @a[r=25]",
+                        "/execute as @e[type=tcmb:tcmb_car,c=1,tag=!stopping,scores={speed=0}] at @s run playsound break_remission @a[r=100]",
+                        "/execute as @e[type=tcmb:tcmb_car,c=1] at @s run execute as @s[tag=!voltage_0] at @s run function notch_neutral",
+                        "@s delete"
+                    ]
+                }
+            }
+        },
+        "controller.animation.notch_break":{
+            "states":{
+                "default":{
+                    "transitions":[
+                        {"run": "(1.0)"}
+                    ]
+                },
+                "run":{
+                    "on_entry":[
+                        "/execute as @e[type=tcmb:tcmb_car,c=1] at @s run execute as @s[tag=!voltage_0] at @s run playsound notch @a[r=25]",
+                        "/execute as @e[type=tcmb:tcmb_car,c=1] at @s run execute as @s[tag=!voltage_0] at @s run function notch_break",
+                        "@s delete"
+                    ]
+                }
+            }
+        },
+        "controller.animation.direction":{
+            "states":{
+                "default":{
+                    "transitions":[
+                        {"run": "(1.0)"}
+                    ]
+                },
+                "run":{
+                    "on_entry":[
+                        "/execute as @e[type=tcmb:tcmb_car,c=1] at @s run execute as @s[tag=!voltage_0] at @s run function direction",
+                        "@s delete"
+                    ]
+                }
+            }
+        },
+        "controller.animation.electricity":{
+            "states":{
+                "default":{
+                    "transitions":[
+                        {"run": "(1.0)"}
+                    ]
+                },
+                "run":{
+                    "on_entry":[
+                        "/playsound random.click @p",
+                        "/function electricity",
+                        "@s delete"
+                    ]
+                }
+            }
+        },
+        "controller.animation.open_all":{
+            "states":{
+                "default":{
+                    "transitions":[
+                        {"run": "(1.0)"}
+                    ]
+                },
+                "run":{
+                    "on_entry":[
+                        "/execute as @e[type=tcmb:tcmb_car,c=1] at @s run execute as @s[tag=!voltage_0] at @s run function open_all",
+                        "@s delete"
+                    ]
+                }
+            }
+        },
+        "controller.animation.open_left":{
+            "states":{
+                "default":{
+                    "transitions":[
+                        {"run": "(1.0)"}
+                    ]
+                },
+                "run":{
+                    "on_entry":[
+                        "/execute as @e[type=tcmb:tcmb_car,c=1] at @s run execute as @s[tag=!voltage_0] at @s run function open_left",
+                        "@s delete"
+                    ]
+                }
+            }
+        },
+        "controller.animation.oneman_open_left":{
+            "states":{
+                "default":{
+                    "transitions":[
+                        {"run": "(1.0)"}
+                    ]
+                },
+                "run":{
+                    "on_entry":[
+                        "/execute as @e[type=tcmb:tcmb_car,c=1] at @s run execute as @s[tag=!voltage_0] at @s run function oneman_open_left",
+                        "@s delete"
+                    ]
+                }
+            }
+        },
+        "controller.animation.open_right":{
+            "states":{
+                "default":{
+                    "transitions":[
+                        {"run": "(1.0)"}
+                    ]
+                },
+                "run":{
+                    "on_entry":[
+                        "/execute as @e[type=tcmb:tcmb_car,c=1] at @s run execute as @s[tag=!voltage_0] at @s run function open_right",
+                        "@s delete"
+                    ]
+                }
+            }
+        },
+        "controller.animation.oneman_open_right":{
+            "states":{
+                "default":{
+                    "transitions":[
+                        {"run": "(1.0)"}
+                    ]
+                },
+                "run":{
+                    "on_entry":[
+                        "/execute as @e[type=tcmb:tcmb_car,c=1] at @s run execute as @s[tag=!voltage_0] at @s run function oneman_open_right",
+                        "@s delete"
+                    ]
+                }
+            }
+        },
+        "controller.animation.close":{
+            "states":{
+                "default":{
+                    "transitions":[
+                        {"run": "(1.0)"}
+                    ]
+                },
+                "run":{
+                    "on_entry":[
+                        "/execute as @e[type=tcmb:tcmb_car,c=1] at @s run execute as @s[tag=!voltage_0] at @s run function close",
+                        "@s delete"
+                    ]
+                }
+            }
+        },
+        "controller.animation.dest":{
+            "states":{
+                "default":{
+                    "transitions":[
+                        {"run": "(1.0)"}
+                    ]
+                },
+                "run":{
+                    "on_entry":[
+                        "/playsound random.click @p",
+                        "/function dest",
+                        "@s delete"
+                    ]
+                }
+            }
+        },
+        "controller.animation.dest_reverse":{
+            "states":{
+                "default":{
+                    "transitions":[
+                        {"run": "(1.0)"}
+                    ]
+                },
+                "run":{
+                    "on_entry":[
+                        "/playsound random.click @p",
+                        "/function dest_reverse",
+                        "@s delete"
+                    ]
+                }
+            }
+        },
+        "controller.animation.oneman":{
+            "states":{
+                "default":{
+                    "transitions":[
+                        {"run": "(1.0)"}
+                    ]
+                },
+                "run":{
+                    "on_entry":[
+                        "/playsound random.click @p",
+                        "/function oneman",
+                        "@s delete"
+                    ]
+                }
+            }
+        },
+        "controller.animation.seat":{
+            "states":{
+                "default":{
+                    "transitions":[
+                        {"run": "(1.0)"}
+                    ]
+                },
+                "run":{
+                    "on_entry":[
+                        "/playsound random.click @p",
+                        "/function seat",
+                        "@s delete"
+                    ]
+                }
+            }
+        },
+        "controller.animation.ride_1":{
+            "states":{
+                "default":{
+                    "transitions":[
+                        {"run": "(1.0)"}
+                    ]
+                },
+                "run":{
+                    "on_entry":[
+                        "/playsound random.click @p",
+                        "/ride @p start_riding @e[family=tcmb_body,tag=car1,c=1] teleport_rider",
+                        "@s delete"
+                    ]
+                }
+            }
+        },
+        "controller.animation.ride_2":{
+            "states":{
+                "default":{
+                    "transitions":[
+                        {"run": "(1.0)"}
+                    ]
+                },
+                "run":{
+                    "on_entry":[
+                        "/playsound random.click @p",
+                        "/ride @p start_riding @e[family=tcmb_body,tag=car2,c=1] teleport_rider",
+                        "@s delete"
+                    ]
+                }
+            }
+        },
+        "controller.animation.delete_train":{
+            "states":{
+                "default":{
+                    "transitions":[
+                        {"run": "(1.0)"}
+                    ]
+                },
+                "run":{
+                    "on_entry":[
+                        "/playsound random.click @p",
+                        "/function delete_train",
+                        "@s delete"
+                    ]
+                }
+            }
+        },
+        "controller.animation.delete_ground_facilities":{
+            "states":{
+                "default":{
+                    "transitions":[
+                        {"run": "(1.0)"}
+                    ]
+                },
+                "run":{
+                    "on_entry":[
+                        "/playsound random.click @p",
+                        "/event entity @e[family=ground_facilities,c=1] delete",
+                        "@s delete"
+                    ]
+                }
+            }
+        },
+        "controller.animation.rotate_ground_facilities":{
+            "states":{
+                "default":{
+                    "transitions":[
+                        {"run": "(1.0)"}
+                    ]
+                },
+                "run":{
+                    "on_entry":[
+                        "/playsound random.click @p",
+                        "/execute as @e[family=ground_facilities,c=1] at @s run execute as @s[family=pdft] at @s run function pdft_rotate",
+                        "/execute as @e[family=ground_facilities,c=1] at @s run execute as @s[family=!pdft] at @s run function transponder_rotate",
+                        "@s delete"
+                    ]
+                }
+            }
+        },
+        "controller.animation.num_adjust_check": {
+            "states":{
+                "default":{
+                    "transitions":[
+                        {"run": "(1.0)"}
+                    ]
+                },
+                "run":{
+                    "on_entry":[
+                        "/playsound random.click @p",
+                        "/execute as @e[family=num_adjust,c=1] at @s run execute as @s[type=tcmb:atacs_transponder] at @s run function atacs_transponder_on_off_check",
+                        "/execute as @e[family=num_adjust,c=1] at @s run execute as @s[family=pdft] at @s run function pdft_channel",
+                        "/execute as @e[family=num_adjust,c=1] at @s run execute as @s[family=ats] at @s run function transponder/ats_speed",
+                        "/execute as @e[family=num_adjust,c=1] at @s run execute as @s[type=tcmb:atc_transponder] at @s run function transponder/atc_speed",
+                        "/execute as @e[family=num_adjust,c=1] at @s run execute as @s[type=tcmb:tasc_hosei] at @s run function tasc_distance",
+                        "/execute as @e[family=num_adjust,c=1] at @s run execute as @s[type=tcmb:d-atc_line_transponder] at @s run function d-atc_line_check",
+                        "/execute as @e[family=num_adjust,c=1] at @s run execute as @s[type=tcmb:d-atc_block_transponder] at @s run function d-atc_block_check",
+                        "@s delete"
+                    ]
+                }
+            }
+        },
+        "controller.animation.num_adjust_plus":{
+            "states":{
+                "default":{
+                    "transitions":[
+                        {"run": "(1.0)"}
+                    ]
+                },
+                "run":{
+                    "on_entry":[
+                        "/playsound random.click @p",
+                        "/execute as @e[family=num_adjust,c=1] at @s run execute as @s[type=tcmb:atacs_transponder] at @s run function atacs_transponder_on_off",
+                        "/execute as @e[family=num_adjust,c=1] at @s run execute as @s[family=pdft] at @s run function pdft_channel_plus",
+                        "/execute as @e[family=num_adjust,c=1] at @s run execute as @s[family=ats] at @s run function transponder/ats_speed_plus",
+                        "/execute as @e[family=num_adjust,c=1] at @s run execute as @s[type=tcmb:atc_transponder] at @s run function transponder/atc_speed_plus",
+                        "/execute as @e[family=num_adjust,c=1] at @s run execute as @s[type=tcmb:tasc_hosei] at @s run function tasc_distance_plus",
+                        "/execute as @e[family=num_adjust,c=1] at @s run execute as @s[type=tcmb:d-atc_line_transponder] at @s run function d-atc_line_plus",
+                        "/execute as @e[family=num_adjust,c=1] at @s run execute as @s[type=tcmb:d-atc_block_transponder] at @s run function d-atc_block_plus",
+                        "@s delete"
+                    ]
+                }
+            }
+        },
+        "controller.animation.num_adjust_minus":{
+            "states":{
+                "default":{
+                    "transitions":[
+                        {"run": "(1.0)"}
+                    ]
+                },
+                "run":{
+                    "on_entry":[
+                        "/playsound random.click @p",
+                        "/execute as @e[family=num_adjust,c=1] at @s run execute as @s[type=tcmb:atacs_transponder] at @s run function atacs_transponder_on_off",
+                        "/execute as @e[family=num_adjust,c=1] at @s run execute as @s[family=pdft] at @s run function pdft_channel_minus",
+                        "/execute as @e[family=num_adjust,c=1] at @s run execute as @s[family=ats] at @s run function transponder/ats_speed_minus",
+                        "/execute as @e[family=num_adjust,c=1] at @s run execute as @s[type=tcmb:atc_transponder] at @s run function transponder/atc_speed_minus",
+                        "/execute as @e[family=num_adjust,c=1] at @s run execute as @s[type=tcmb:tasc_hosei] at @s run function tasc_distance_minus",
+                        "/execute as @e[family=num_adjust,c=1] at @s run execute as @s[type=tcmb:d-atc_line_transponder] at @s run function d-atc_line_minus",
+                        "/execute as @e[family=num_adjust,c=1] at @s run execute as @s[type=tcmb:d-atc_block_transponder] at @s run function d-atc_block_minus",
+                        "@s delete"
+                    ]
+                }
+            }
+        }
+    }
+}

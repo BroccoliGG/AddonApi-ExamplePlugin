@@ -1,0 +1,20 @@
+{
+    "format_version": "1.18.0",
+    "minecraft:client_entity": {
+        "description": {
+            "identifier": "tcmb:tcmb_starter",
+            "materials": {
+                "default":"skeleton"
+            },
+            "textures": {
+                "default": "textures/entity/null"
+            },
+            "geometry": {
+                "default": "geometry.null"
+            },
+            "render_controllers": [
+                "controller.render.default"
+            ]
+        }
+    }
+}

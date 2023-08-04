@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {
     "format_version": 1,
     "header": {
@@ -15,3 +16,33 @@
         }
     ]
 }
+=======
+{
+  "format_version": 2,
+  "header": {
+    "name": "TCMB",
+    "description": "Train Controller for Minecraft BE",
+    "version": [1, 0, 0],
+    "uuid": "cfbba0b1-51fe-4f44-bd2b-d07a106617e7",
+    "min_engine_version": [1, 19, 50]
+  },
+  "modules": [
+    {
+      "type": "data",
+      "description": "TCMB Module",
+      "version": [1, 0, 0],
+      "uuid": "1f80bcce-5a8f-4d57-9f2f-39135c5ef2d3"
+    }
+  ],
+  "dependencies": [
+    {
+    "uuid": "4bc491c8-d249-4cb9-9432-3bf4da163da3",
+    "version": [1, 0, 0]
+    }
+  ],
+  "metadata": {
+    "url": "https://github.com/TCMB-Project/",
+    "license": "TSL v1.0"
+  }
+}
+>>>>>>> d55fb31676137abe2e3edd06fc25482a578966cc
