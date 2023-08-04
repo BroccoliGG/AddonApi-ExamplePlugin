@@ -1,0 +1,22 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "bus:nis3",
+      "materials": {
+        "default": "skeleton"
+      },
+      "textures": {
+        "default": "textures/entity/nis3"
+      },
+      "geometry": {
+        "default": "geometry.nis3"
+      },
+      "render_controllers": [ "controller.render.default" ],
+      "spawn_egg": {
+        "texture": "spawn_bus",
+        "texture_index": 0
+      }
+    }
+  }
+}
